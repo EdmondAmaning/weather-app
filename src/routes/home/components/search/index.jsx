@@ -14,6 +14,7 @@ export default class View extends Component {
     super(props);
 
     this.state = {
+        loading: true,
         time: [],
         location_1: '',
         location_2: '',
@@ -70,8 +71,15 @@ export default class View extends Component {
     }
   }
 
+    componentDidMount(){
+        this.setState({
+            loading: false
+        })
+    }
+
   render() {
     const _ = this.state
+        if(_.loading){return <div className="text-center my-4"><h1>Loading</h1></div>}
         return (
             <>
                 <div className="container">
