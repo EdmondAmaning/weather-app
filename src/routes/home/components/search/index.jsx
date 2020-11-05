@@ -141,7 +141,7 @@ export default class View extends Component {
     }
 
     getWeather(a, name, lon, lat){
-        const url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lon='+lon+'&lat='+lat+'&dt='+(Math.floor(new Date()/1000))+'&appid=b548e41c287c34fb573bae4919dce306'
+        const url = 'https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lon='+lon+'&lat='+lat+'&dt='+(Math.floor(new Date()/1000))+'&appid='+process.env.KEY
         fetch(url, {
             method: 'GET',
             mode: 'cors'
